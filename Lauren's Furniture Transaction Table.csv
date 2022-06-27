@@ -1,3 +1,20 @@
+## I was trying to create a fresh schema for the supplies table in the jeff supplies dataset and correct a mispelled entry in the supplier column 
+SELECT
+  *,
+  CASE WHEN supplier = 'Inflatibles Plos' THEN 'Inflatibles Plus'
+  ELSE supplier
+  END AS supplier_new
+FROM 
+Jeff_supplies.supplies
+
+SELECT
+  DISTINCT supplier_new
+FROM
+  Jeff_supplies.temp_supplies;
+
+
+
+
 date,transaction_id,customer_id,product,product_code,product_color,product_price,purchase_size,purchase_price,revenue
 2020-08-29 00:00:00,9900,1980,fan,SKU83503,brass,$13.99,2,27.98,$27.98
 2020-05-01 00:00:00,12315,2463,fan,SKU83503,brass,$13.99,2,27.98,$27.98
